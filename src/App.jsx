@@ -1,122 +1,84 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
+import Dashboard from './Dashboard'
 
 function App() {
-  const [count, setCount] = useState(0)
+  if (window.location.pathname === '/dashboard') {
+    return <Dashboard />
+  }
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
+    <main className="landing">
+      <header className="navbar">
+        <img src="/src/assets/logo.png" alt="ABTalks" className="logo" />
+      </header>
+
+      <section className="hero">
+        <p className="eyebrow">60 DAYS · ONE COMMITMENT</p>
+
+        <h1>
+          Start small.
+          <br />
+          <span>Plant the habit.</span>
+          <br />
+          Grow the skill.
+        </h1>
+
+        <p className="description">
+          One build. One day. One step closer to the developer you're becoming.
+        </p>
+
+        <button className="start-button">
+          Plant your first day <span>→</span>
         </button>
       </section>
 
-      <div className="ticks"></div>
+      <section className="plant-preview">
+        <img src="/src/assets/stage1.png" />
+      </section>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+      <section className="stats">
+        <div>
+          <strong>60</strong>
+          <span>DAYS</span>
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+
+        <div>
+          <strong>1</strong>
+          <span>BUILD / DAY</span>
+        </div>
+
+        <div>
+          <strong>2</strong>
+          <span>PROOFS / DAY</span>
         </div>
       </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+      <section className="about-card">
+  <div className="about-card-content">
+    <p className="about-label">THE IDEA</p>
+
+    <h2>A 60-day challenge to build in public.</h2>
+
+    <p>
+      Pick a track. Build something every day. Share your progress.
+      Watch a small habit grow into something you can be proud of.
+    </p>
+  </div>
+
+  <div className="about-card-number">
+    <span>60</span>
+    <small>DAYS</small>
+  </div>
+</section><br />
+ <p className="description">
+         You don't have to bloom on day one.
+        </p><br /><br />
+    </main>
   )
 }
 
+
+function Landing() {
+  // MOVE YOUR CURRENT LANDING PAGE CODE HERE
+}
 export default App
