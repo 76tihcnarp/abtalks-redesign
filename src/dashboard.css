@@ -385,7 +385,8 @@
 }
 
 .dashboard-summary {
-  margin: 32px 0;
+  max-width: 920px;
+  margin: 32px auto;
 }
 
 .today-card {
@@ -394,7 +395,11 @@
   justify-content: space-between;
   gap: 20px;
 
+  width: 100%;
+  box-sizing: border-box;
+
   padding: 22px;
+
   background: #0b0b0b;
   border: 1px solid #1c1c1c;
   border-radius: 16px;
@@ -443,14 +448,17 @@
 
 .stats-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
 
   margin-top: 10px;
 }
 
 .stat-card {
-  padding: 16px 12px;
+  min-width: 0;
+  box-sizing: border-box;
+
+  padding: 16px 14px;
 
   background: #0b0b0b;
   border: 1px solid #1c1c1c;
@@ -476,4 +484,37 @@
   margin-left: 4px;
   color: #666;
   font-size: 9px;
+}
+
+@media (max-width: 600px) {
+  .dashboard-summary {
+    margin: 28px 0;
+  }
+
+  .today-card {
+    padding: 18px;
+  }
+
+  .stats-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .stat-card {
+    padding: 14px 8px;
+  }
+
+  .stat-card strong {
+    font-size: 19px;
+  }
+
+  .stat-card small {
+    display: block;
+    margin: 4px 0 0;
+  }
+}
+
+.popup-status.missed {
+  background: rgba(210, 90, 90, 0.12);
+  color: #d96b6b;
 }

@@ -1,10 +1,14 @@
 import './App.css'
 import Dashboard from './dashboard'
+import DayPage from './DayPage'
 
 function App() {
   if (window.location.pathname === '/dashboard') {
     return <Dashboard />
   }
+  if (window.location.pathname.startsWith('/day/')) {
+  return <DayPage />
+}
 
   return (
     <main className="landing">
@@ -27,9 +31,14 @@ function App() {
           One build. One day. One step closer to the developer you're becoming.
         </p>
 
-        <button className="start-button">
-          Plant your first day <span>→</span>
-        </button>
+        <button
+  className="start-button"
+  onClick={() => {
+    window.location.href = '/dashboard'
+  }}
+>
+  Plant your first day <span>→</span>
+</button>
       </section>
 
       <section className="plant-preview">

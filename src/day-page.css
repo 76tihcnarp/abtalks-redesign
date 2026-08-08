@@ -1,0 +1,368 @@
+.day-page {
+  min-height: 100vh;
+  padding: 28px 20px 50px;
+  background: #050505;
+  color: #f3f7f1;
+}
+
+/* Header */
+
+.day-header {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.day-header > span {
+  color: #75d95b;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.day-header p {
+  margin: 34px 0 8px;
+  color: #777;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+}
+
+.day-header h1 {
+  margin: 0;
+  font-size: 36px;
+  line-height: 1.08;
+  letter-spacing: -1px;
+}
+
+.day-status {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 7px 12px;
+
+  border-radius: 20px;
+  background: rgba(117, 217, 91, 0.1);
+  color: #75d95b;
+
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+/* Plant state */
+
+.plant-state {
+  max-width: 680px;
+  margin: 36px auto 0;
+
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  padding: 20px;
+
+  background: #0b0b0b;
+  border: 1px solid #1c1c1c;
+  border-radius: 18px;
+}
+
+.plant-image {
+  width: 80px;
+  height: 80px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #121912;
+  border-radius: 14px;
+
+  font-size: 40px;
+}
+
+.plant-state > div:last-child > span {
+  color: #777;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.plant-state h2 {
+  margin: 5px 0 4px;
+  font-size: 18px;
+}
+
+.plant-state p {
+  margin: 0;
+  color: #888;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Task */
+
+.day-task {
+  max-width: 680px;
+  margin: 42px auto 0;
+}
+
+.day-task > span,
+.section-heading > span {
+  color: #75d95b;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.day-task h2 {
+  margin: 10px 0 10px;
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.day-task > p {
+  margin: 0;
+  color: #999;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.task-list {
+  margin-top: 22px;
+  padding: 18px;
+
+  background: #0b0b0b;
+  border: 1px solid #1c1c1c;
+  border-radius: 14px;
+}
+
+.task-list div {
+  padding: 10px 0;
+
+  color: #bbb;
+  font-size: 13px;
+
+  border-bottom: 1px solid #1b1b1b;
+}
+
+.task-list div:first-child {
+  padding-top: 0;
+}
+
+.task-list div:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+/* Proof */
+
+.proof-section {
+  max-width: 680px;
+  margin: 42px auto 0;
+}
+
+.section-heading {
+  margin-bottom: 18px;
+}
+
+.section-heading p {
+  margin: 7px 0 0;
+  color: #777;
+  font-size: 12px;
+}
+
+.proof-card {
+  margin-bottom: 12px;
+  padding: 18px;
+
+  background: #0b0b0b;
+  border: 1px solid #1c1c1c;
+  border-radius: 14px;
+}
+
+.proof-card strong {
+  font-size: 15px;
+}
+
+.proof-card p {
+  margin: 4px 0 14px;
+  color: #777;
+  font-size: 11px;
+}
+
+.proof-card input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 13px 14px;
+
+  background: #111;
+  border: 1px solid #252525;
+  border-radius: 9px;
+
+  outline: none;
+
+  color: #f3f7f1;
+  font-size: 12px;
+}
+
+.proof-card input::placeholder {
+  color: #555;
+}
+
+.proof-card input:focus {
+  border-color: #75d95b;
+}
+
+/* Submit */
+
+.submit-proof {
+  width: 100%;
+  margin-top: 8px;
+  padding: 15px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #75d95b;
+  color: #050505;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.submit-proof:hover {
+  background: #8be873;
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+  .day-page {
+    padding: 24px 18px 44px;
+  }
+
+  .day-header h1 {
+    font-size: 32px;
+  }
+
+  .plant-state {
+    padding: 16px;
+  }
+
+  .plant-image {
+    width: 68px;
+    height: 68px;
+    font-size: 34px;
+  }
+
+  .day-task h2 {
+    font-size: 22px;
+  }
+}
+
+.submission-success {
+  margin-top: 16px;
+  padding: 22px;
+
+  background: rgba(117, 217, 91, 0.08);
+  border: 1px solid rgba(117, 217, 91, 0.25);
+  border-radius: 14px;
+
+  text-align: center;
+}
+
+.submission-success strong {
+  display: block;
+
+  color: #75d95b;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.submission-success p {
+  margin: 8px 0 16px;
+
+  color: #aaa;
+  font-size: 12px;
+}
+
+.submission-success div {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.submission-success span {
+  color: #75d95b;
+  font-size: 11px;
+}
+
+.submission-success small {
+  display: block;
+  margin-top: 18px;
+
+  color: #777;
+  font-size: 11px;
+}
+
+.plant-art {
+  width: 100%;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.plant-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.day-plant {
+  max-width: 680px;
+  margin: 36px auto 0;
+  text-align: center;
+}
+
+.plant-art {
+  width: 100%;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.plant-art img {
+  width: 75%;
+  height: 75%;
+  object-fit: contain;
+}
+
+.plant-info {
+  margin-top: 18px;
+}
+
+.plant-info > span {
+  color: #777;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.plant-info h2 {
+  margin: 6px 0 4px;
+  font-size: 20px;
+}
+
+.plant-info p {
+  margin: 0;
+  color: #777;
+  font-size: 12px;
+}
+.logot{
+
+    margin-left: 35%;
+    margin-bottom: 20px;
+    height: 50px;
+}

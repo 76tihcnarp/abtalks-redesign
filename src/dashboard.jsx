@@ -10,18 +10,29 @@ function Dashboard() {
     const [field, setField] = useState(1)
 const [selectedDay, setSelectedDay] = useState(null)
 
-const currentDay = 27
-const totalDays = 60
+const challenge = {
+  currentDay: 27,
+  totalDays: 60,
+  currentStreak: 7,
+  standing: 18,
+}
+
+const currentDay = challenge.currentDay
+const totalDays = challenge.totalDays
 const completedDays = currentDay - 1
-const progress = (currentDay / totalDays) * 100
+const progress = (completedDays / totalDays) * 100
 
-const currentStreak = 7
-const standing = 18
+const currentStreak = challenge.currentStreak
+const standing = challenge.standing
 
-    const getDayStatus = (day) => {
-  if (day < 27) return 'Completed'
-  if (day === 27) return 'Current'
-  return 'Locked'
+  const getDayStatus = (day) => {
+ if (day === 3 || day === 19) {
+  status = 'Missed'
+} else if (day < currentDay) {
+  status = 'Completed'
+} else if (day === currentDay) {
+  status = 'Current'
+}
 }
   return (
     
@@ -116,47 +127,52 @@ const standing = 18
 
         <div className="garden-grid">
   {Array.from({ length: 30 }, (_, index) => {
-    const day = field === 1 ? index + 1 : index + 31
-    let status = 'Locked'
+  const day = field === 1 ? index + 1 : index + 31
 
-if (day < 27) {
-  status = 'Completed'
-} else if (day === 27) {
-  status = 'Current'
+  let status = 'Locked'
+
+  if (day === 3 || day === 19) {
+    status = 'Missed'
+  } else if (day < 27) {
+    status = 'Completed'
+  } else if (day === 27) {
+    status = 'Current'
+  }
+
+  let image = empty
+
+  if (day === 3 || day === 19) {
+  image = wilt
+} else if (day < currentDay) {
+  image = bloom
+} else if (day === currentDay) {
+  image = sapling
 }
 
-    let image = empty
-
-    if (day < 27) {
-      image = bloom
-    } else if (day === 27) {
-      image = sapling
-    }
-
-    return (
-      <div
-  className="day-cell"
-  key={day}
-  onClick={() => setSelectedDay(day)}
->
-        <img src={image} alt="" />
-        <span className="day-number">{day}</span>
-        
-      </div>
-    )
-  })}
+  return (
+    <div
+      className="day-cell"
+      key={day}
+      onClick={() => setSelectedDay(day)}
+    >
+      <img src={image} alt="" />
+      <span className="day-number">{day}</span>
+    </div>
+  )
+})}
 </div>
 
       </section>
+
 {selectedDay && (
- <div
-  className="day-popup-overlay"
-  onClick={() => setSelectedDay(null)}
->
-   <div
-  className="day-popup"
-  onClick={(e) => e.stopPropagation()}
->
+  <div
+    className="day-popup-overlay"
+    onClick={() => setSelectedDay(null)}
+  >
+    <div
+      className="day-popup"
+      onClick={(e) => e.stopPropagation()}
+    >
       <button
         className="popup-close"
         onClick={() => setSelectedDay(null)}
@@ -168,20 +184,31 @@ if (day < 27) {
 
       <h2>Day {selectedDay}</h2>
 
-      <div className={`popup-status ${getDayStatus(selectedDay).toLowerCase()}`}>
-          {getDayStatus(selectedDay)}
+      <div
+        className={`popup-status ${getDayStatus(selectedDay).toLowerCase()}`}
+      >
+        {getDayStatus(selectedDay)}
       </div>
 
       <div className="popup-build">
         <span>WHAT YOU BUILT</span>
-        <h3>Your work for Day {selectedDay}</h3>
+
+        <h3>
+          {getDayStatus(selectedDay) === 'Missed'
+            ? 'No submission'
+            : `Your work for Day ${selectedDay}`}
+        </h3>
+
         <p>
-          Your project progress for this day will appear here.
+          {getDayStatus(selectedDay) === 'Missed'
+            ? 'This day was missed. Get back to building today.'
+            : `Your project progress for Day ${selectedDay} will appear here.`}
         </p>
       </div>
     </div>
   </div>
 )}
+
 <section className="dashboard-quote">
   <p>
     “You don't have to grow fast. You just have to keep growing.”
