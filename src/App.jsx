@@ -1,5 +1,5 @@
 import './App.css'
-import Dashboard from './Dashboard'
+import Dashboard from './dashboard'
 
 function App() {
   if (window.location.pathname === '/dashboard') {
@@ -77,8 +77,4 @@ function App() {
   )
 }
 
-
-function Landing() {
-  // MOVE YOUR CURRENT LANDING PAGE CODE HERE
-}
 export default App
