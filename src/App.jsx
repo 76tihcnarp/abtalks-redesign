@@ -2,6 +2,7 @@ import './App.css'
 import Dashboard from './dashboard'
 import DayPage from './DayPage'
 import logo from './assets/logo.png'
+import stage1 from './assets/stage1.png'
 
 function App() {
   if (window.location.pathname === '/dashboard') {
@@ -43,7 +44,7 @@ function App() {
       </section>
 
       <section className="plant-preview">
-        <img src="/src/assets/stage1.png" />
+        <img src={stage1} />
       </section>
 
       <section className="stats">
