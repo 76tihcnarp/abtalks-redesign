@@ -1,5 +1,6 @@
 import './day-page.css'
 import { useState } from 'react'
+
 import stage0 from './assets/stage0.png'
 import stage1 from './assets/stage1.png'
 import stage2 from './assets/stage2.png'
@@ -14,7 +15,8 @@ function DayPage() {
     const [submitted, setSubmitted] = useState(false)
 const [github, setGithub] = useState('')
 const [linkedin, setLinkedin] = useState('')
-    const day = 35
+   const path = window.location.pathname
+const day = Number(path.split('/').pop())
 
 const getPlantStage = (day) => {
   if (day <= 4) return stage0

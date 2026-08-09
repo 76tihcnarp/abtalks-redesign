@@ -25,14 +25,16 @@ const progress = (completedDays / totalDays) * 100
 const currentStreak = challenge.currentStreak
 const standing = challenge.standing
 
-  const getDayStatus = (day) => {
- if (day === 3 || day === 19) {
-  status = 'Missed'
-} else if (day < currentDay) {
-  status = 'Completed'
-} else if (day === currentDay) {
-  status = 'Current'
-}
+const getDayStatus = (day) => {
+  if (day === 3 || day === 19) {
+    return 'Missed'
+  } else if (day < currentDay) {
+    return 'Completed'
+  } else if (day === currentDay) {
+    return 'Current'
+  } else {
+    return 'Locked'
+  }
 }
   return (
     
@@ -84,7 +86,9 @@ const standing = challenge.standing
     </div>
 
     <button
-      onClick={() => setSelectedDay(currentDay) }
+      onClick={() => {
+    window.location.href = '/day/37';
+  }}
     >
       →
     </button>
@@ -208,7 +212,6 @@ const standing = challenge.standing
     </div>
   </div>
 )}
-
 <section className="dashboard-quote">
   <p>
     “You don't have to grow fast. You just have to keep growing.”

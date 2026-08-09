@@ -192,6 +192,7 @@
 .day-cell:hover .day-hover {
   opacity: 1;
 }
+
 .day-cell:hover img {
   transform: scale(1.08);
   transition: transform 0.2s ease;
