@@ -18,6 +18,7 @@ const [linkedin, setLinkedin] = useState('')
    const path = window.location.pathname
 const requestedDay = Number(path.split('/').pop())
 const day = Math.min(Math.max(requestedDay, 1), 60)
+const challengeFinished = day === 60
 
 const getPlantStage = (day) => {
   if (day <= 4) return stage0
@@ -39,62 +40,80 @@ const plantImage = getPlantStage(day)
       <header className="day-header">
         <span>ABTALKS · 60 DAY CHALLENGE</span>
 
-        <p>DAY {day} / 60</p>
+<p>DAY {day} / 60</p>
 
-        <h1>Build something<br />worth showing.</h1>
+<h1>
+  {challengeFinished
+    ? <>You did it.<br />You grew.</>
+    : <>Build something<br />worth showing.</>
+  }
+</h1>
 
-        <div className="day-status">
-          CURRENT DAY
-        </div>
+<div className="day-status">
+  {challengeFinished ? 'CHALLENGE COMPLETE' : 'CURRENT DAY'}
+</div>
       </header>
 
 
       <section className="day-plant">
-
   <div className="plant-art">
     <img src={plantImage} alt="Your plant" />
   </div>
 
   <div className="plant-info">
-    <span>YOUR PLANT</span>
-    <h2>Grow Well</h2>
+    {challengeFinished ? 'Plant Has Fully Blossomed' : "Plant Is Growing Well"}
     <p>Day {day} · Stage {day <= 4 ? 0 : day <= 12 ? 1 : day <= 20 ? 2 : day <= 30 ? 3 : day <= 40 ? 4 : day <= 50 ? 5 : 6}</p>
   </div>
 
 </section>
 
 
-     <section className="day-task">
+ <section className="day-task">
 
-  <span>TODAY'S TASK</span>
+  <span>
+    {challengeFinished ? 'YOU MADE IT' : "TODAY'S TASK"}
+  </span>
+<br />
+  {challengeFinished && (
+    <p className="completion-message">
+      60 days. 60 builds. You showed up and finished the challenge.
+      Your garden has grown all the way.
+    </p>
+  )}
 
   <h2>
-    Build your first responsive dashboard.
+    {challengeFinished
+      ? 'You completed the 60-day challenge.'
+      : 'Build your first responsive dashboard.'
+    }
   </h2>
 
-  <p>
-    Turn your progress into a simple dashboard that
-    someone can understand within a few seconds.
-  </p>
+  {!challengeFinished && (
+    <>
+      <p>
+        Turn your progress into a simple dashboard that
+        someone can understand within a few seconds.
+      </p>
 
-  <div className="task-list">
-    <div>✓ Create a clear dashboard layout</div>
-    <div>✓ Make it mobile-first and responsive</div>
-    <div>✓ Show at least 3 meaningful sections</div>
-    <div>✓ Add one interactive element</div>
-    <div>✓ Deploy your work</div>
-  </div>
+      <div className="task-list">
+        <div>✓ Create a clear dashboard layout</div>
+        <div>✓ Make it mobile-first and responsive</div>
+        <div>✓ Show at least 3 meaningful sections</div>
+        <div>✓ Add one interactive element</div>
+        <div>✓ Deploy your work</div>
+      </div>
 
-</section>
-
-
-      <section className="proof-section">
+       <section className="proof-section">
 
         <div className="section-heading">
-          <span>PROOF OF WORK</span>
-          <p>Submit both before completing the day.</p>
+         
+          {challengeFinished
+  ? 'Your 60-day journey is complete.'
+  : 'Submit both before completing the day.'}
         </div>
+<br />
 
+ <center><span>PROOF OF WORK</span> </center><br />
 
         <div className="proof-card">
           <div>
@@ -153,6 +172,13 @@ const plantImage = getPlantStage(day)
 )}
 
       </section>
+    </>
+  )}
+
+</section>
+
+
+     
 
     </main>
   )

@@ -47,6 +47,28 @@
 
 /* Plant state */
 
+.completion-message {
+  margin-top: 18px;
+  padding: 16px 18px;
+
+  background: rgba(117, 217, 91, 0.08);
+  border: 1px solid rgba(117, 217, 91, 0.2);
+  border-radius: 12px;
+
+  color: #a8d99b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.completion-message + h2 {
+  color: #f3f7f1;
+}
+
+.prx{
+  padding: 3px;
+  color:  #4e6bcd;
+  border-radius: 3%;
+  
+}
 .plant-state {
   max-width: 680px;
   margin: 36px auto 0;
