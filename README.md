@@ -6,7 +6,7 @@ The redesign focuses on making the challenge feel more visual, motivating, and e
 
 ## Live Demo
 
-
+https://abtalks-reinvent.netlify.app/
 
 ## Repository
 
@@ -14,11 +14,11 @@ The redesign focuses on making the challenge feel more visual, motivating, and e
 
 ## Route Map
 
-/
+/            =  https://abtalks-reinvent.netlify.app/
 
-/dashboard
+/dashboard   =  https://abtalks-reinvent.netlify.app/dashboard
 
-/day/12
+/day/37      =  https://abtalks-reinvent.netlify.app/day/37
 
 ## Overview
 
