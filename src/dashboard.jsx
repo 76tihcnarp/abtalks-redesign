@@ -1,6 +1,7 @@
 import './dashboard.css'
 import { useState } from 'react'
 
+import logo from './assets/logo.png'
 import empty from './assets/empty.png'
 import bloom from './assets/bloom.png'
 import wilt from './assets/wilt.png'
@@ -42,11 +43,7 @@ const getDayStatus = (day) => {
       
     <main className="dashboard">
 <header className="dashboard-header">
-    <img
-  src="/src/assets/logo.png"
-  alt="ABTALKS"
-  className="abtaks-logo"
-/>
+    <img src={logo} className="abtaks-logo" />
 </header>
       <header className="dashboard-header">
         <div>

@@ -1,6 +1,7 @@
 import './App.css'
 import Dashboard from './dashboard'
 import DayPage from './DayPage'
+import logo from './assets/logo.png'
 
 function App() {
   if (window.location.pathname === '/dashboard') {
@@ -13,7 +14,7 @@ function App() {
   return (
     <main className="landing">
       <header className="navbar">
-        <img src="/src/assets/logo.png" alt="ABTalks" className="logo" />
+        <img src={logo} className="logo" />
       </header>
 
       <section className="hero">

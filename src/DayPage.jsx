@@ -9,6 +9,7 @@ import stage4 from './assets/stage4.png'
 import stage5 from './assets/stage5.png'
 import stage6 from './assets/stage6.png'
 import finalPlant from './assets/final.png'
+import logo from './assets/logo.png'
 
 function DayPage() {
     
@@ -35,7 +36,7 @@ const plantImage = getPlantStage(day)
   return (
     <main className="day-page">
             <header>
-        <img src="/src/assets/logo.png" alt="ABTalks" className='logot' />
+        <img src={logo} className="logot" />
       </header>
       <header className="day-header">
         <span>ABTALKS · 60 DAY CHALLENGE</span>
