@@ -15,7 +15,9 @@ The redesign focuses on making the challenge feel more visual, motivating, and e
 ## Route Map
 
 /
+
 /dashboard
+
 /day/12
 
 ## Overview
