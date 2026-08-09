@@ -34,7 +34,7 @@ function App() {
         <button
   className="start-button"
   onClick={() => {
-    window.location.href = '/dashboard'
+    window.location.href = '/day/1'
   }}
 >
   Plant your first day <span>→</span>

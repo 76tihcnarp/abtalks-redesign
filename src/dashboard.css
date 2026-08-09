@@ -198,7 +198,55 @@
   transition: transform 0.2s ease;
 }
 
-/* Day Popup */
+
+.profile-card {
+  max-width: 700px;
+  margin: 20px auto 0;
+  padding: 16px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  background: #0b0b0b;
+  border: 1px solid #1c1c1c;
+  border-radius: 14px;
+}
+
+.profile-card span {
+  display: block;
+  color: #666;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.profile-card strong {
+  display: block;
+  margin-top: 6px;
+  color: #f3f7f1;
+  font-size: 14px;
+}
+
+.profile-card p {
+  margin: 5px 0 0;
+  color: #777;
+  font-size: 11px;
+}
+
+.profile-card button {
+  flex-shrink: 0;
+
+  padding: 9px 12px;
+
+  background: #151515;
+  border: 1px solid #292929;
+  border-radius: 8px;
+
+  color: #75d95b;
+  font-size: 10px;
+  cursor: pointer;
+}
 
 .day-popup-overlay {
   position: fixed;

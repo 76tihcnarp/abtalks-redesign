@@ -61,7 +61,15 @@ const getDayStatus = (day) => {
 <span>/ {totalDays} days</span>
         </div>
       </header>
+<div className="profile-card">
+  <div>
+    <span>PROFILE</span>
+    <strong>Profile incomplete</strong>
+    <p>Add your details to personalize your challenge.</p>
+  </div>
 
+  <button>Complete →</button>
+</div>
     <div className="progress-section">
   <div className="progress-info">
     <span>YOUR PROGRESS</span>
@@ -87,7 +95,7 @@ const getDayStatus = (day) => {
 
     <button
       onClick={() => {
-    window.location.href = '/day/37';
+    window.location.href = '/day/27';
   }}
     >
       →

@@ -16,7 +16,8 @@ function DayPage() {
 const [github, setGithub] = useState('')
 const [linkedin, setLinkedin] = useState('')
    const path = window.location.pathname
-const day = Number(path.split('/').pop())
+const requestedDay = Number(path.split('/').pop())
+const day = Math.min(Math.max(requestedDay, 1), 60)
 
 const getPlantStage = (day) => {
   if (day <= 4) return stage0
@@ -25,7 +26,7 @@ const getPlantStage = (day) => {
   if (day <= 30) return stage3
   if (day <= 40) return stage4
   if (day <= 50) return stage5
-  if (day <= 60) return stage6
+  if (day <= 59) return stage6
   return finalPlant
 }
 
@@ -56,7 +57,7 @@ const plantImage = getPlantStage(day)
 
   <div className="plant-info">
     <span>YOUR PLANT</span>
-    <h2>Growing well</h2>
+    <h2>Grow Well</h2>
     <p>Day {day} · Stage {day <= 4 ? 0 : day <= 12 ? 1 : day <= 20 ? 2 : day <= 30 ? 3 : day <= 40 ? 4 : day <= 50 ? 5 : 6}</p>
   </div>
 
